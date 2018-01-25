@@ -22,7 +22,7 @@ def maximum_subarray_bf(arr):
                 right = j
     return (left, right, curr_max)
 
-A_LIST = [-65, 47, 34, -21, -55, 21, -10]
+A_LIST = [-2,1,-3,4,-1,2,1,-5,4]
 arr2 = [2, 3, 4, 5, 7]
 b_list = [-2, -5, 6, -2, -3, 1, 5, -6]
 print(maximum_subarray_bf(A_LIST))
