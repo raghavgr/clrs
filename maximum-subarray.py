@@ -63,7 +63,7 @@ def maximum_crossing_subarray(arr, low, mid, high):
     right_sum = -9223372036854775808
     sum = 0
     right_max = 0
-    print(high)
+    # print(high)
     for i in range(mid + 1, high+1):
         sum += arr[i]
         if sum > right_sum:
@@ -76,4 +76,5 @@ def maximum_crossing_subarray(arr, low, mid, high):
 A_LIST = [-2,1,-3,4,-1,2,1,-5,4]
 b_list = [-2, -5, 6, -2, -3, 1, 5, -6]
 print(maximum_subarray(b_list, 0, len(b_list) - 1))
+print(maximum_subarray(A_LIST, 0, len(A_LIST) - 1))
 print(maximum_subarray([1, 2], 0, 2 - 1))
