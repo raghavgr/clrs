@@ -24,6 +24,7 @@ def merge(arr, left, mid, right):
     right_arr = [0] * right_len
     # fill up the right and left arrays
     for i in range(0, left_len):
+        print(left + i)
         left_arr[i] = arr[left + i]
     for i in range(0, right_len):
         right_arr[i] = arr[mid + 1 + i]

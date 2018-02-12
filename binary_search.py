@@ -12,6 +12,7 @@ def iter_binary_search(arr, value):
     return None
 
 def binary_search(arr, value, low, high):
+    """ recursive """
     mid = (low + high) // 2
     if value == arr[mid]:
         return mid

@@ -7,6 +7,6 @@ def insertion_sort(arr):
             j = j - 1
         arr[j + 1] = key
 
-arr = [65, 22, 34,21, 55, 21, 10]
+arr = [65, 22, 34, 21, 55, 10]
 insertion_sort(arr)
 print(arr)
