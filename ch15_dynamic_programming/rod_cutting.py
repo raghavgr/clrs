@@ -34,8 +34,7 @@ def memoized_cut_rod(prices, n):
 
 def memoized_cut_rod_aux(prices, n, r):
     """
-    Helper method for memoized approach
-    top-down
+    Helper method for top-down with memoized approach
     """
     if r[n- 1] >= 0:        # once result found, don't check again.
         return r[n - 1]
@@ -48,4 +47,18 @@ def memoized_cut_rod_aux(prices, n, r):
     r[n - 1] = q
     return q
 
-print(memoized_cut_rod([1, 5, 8, 9], 4))
+def bottom_up_cut_rod(prices, n):
+    """
+    Bottum-up method
+    solving any par- ticular subproblem depends only on solving “smaller” subproblems
+    """
+    r = [0 for i in range(n + 1)]
+    for j in range(1, n + 1):
+        q = -sys.maxsize-1
+        for i in range(0, j):
+            q = max(q, prices[i] + r[j - i - 1])
+        r[j] = q
+    print(r)
+    return r[n]
+
+print(bottom_up_cut_rod([1, 5, 8, 9, 10, 17, 17, 20], 4))
