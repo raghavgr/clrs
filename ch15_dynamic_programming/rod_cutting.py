@@ -61,4 +61,28 @@ def bottom_up_cut_rod(prices, n):
     print(r)
     return r[n]
 
-print(bottom_up_cut_rod([1, 5, 8, 9, 10, 17, 17, 20], 4))
+def extended_bottom_up_cut_rod(prices, n):
+    r = [0 for i in range(n + 1)]
+    s = [0 for i in range(n + 1)]
+    for j in range(1, n + 1):
+        q = -sys.maxsize-1
+        for i in range(0, j):
+            if q < prices[i] + r[j - i - 1]:
+                q = prices[i] + r[j - i - 1]
+                s[j] = i + 1
+        r[j] = q
+    #print(r)
+    print(s)
+    #print(r[n])
+    return (r, s, r[n])
+
+def print_cut_rod_solution(p, n):
+    (r, s, opt_val) = extended_bottom_up_cut_rod(p, n)
+    i = n
+    while i > 0:
+        print("Make a cut of: " + str(s[i]))
+        i = i - s[i]
+    print("Highest price is: " + str(opt_val))
+        
+    
+print_cut_rod_solution([1, 5, 8, 9, 10, 17, 17, 20], 4)
